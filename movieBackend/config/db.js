@@ -10,8 +10,13 @@ const pool = new Pool({
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
-pool.on('connect', () => {
-  console.log('connected to the db');
+// Test the connection to verify that the database is reachable on startup.
+pool.connect((err, client, release) => {
+  if (err) {
+    return console.error('Error acquiring client for connection test', err.stack);
+  }
+  console.log('Database connection successful');
+  client.release(); // Release the client back to the pool
 });
 
 module.exports = pool;
