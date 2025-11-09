@@ -15,8 +15,8 @@ const app = express();
 
 const allowedOrigins = [
     'http://localhost:3000', // Your local frontend
-    'http://localhost:8080', // Just in case
-    'https://your-netlify-site-name.netlify.app' // <-- PASTE YOUR NETLIFY URL HERE
+    'http://localhost:8080', // Your local Vite dev server
+    'https://movieticketbooking-prathik.netlify.app' // Your production frontend URL
 ];
 
 app.use(cors({
