@@ -5,7 +5,9 @@ import api from '@/lib/api'; // Assuming you created api.ts
 // Define the shape of your user object based on your backend
 interface User {
   id: string;
+  name: string;
   email: string;
+  isAdmin: boolean;
 }
 
 interface AuthContextType {
