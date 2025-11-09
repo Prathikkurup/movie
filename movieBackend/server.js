@@ -13,10 +13,14 @@ const bookingRoutes = require('./routes/bookingRoutes');
 
 const app = express();
 
-// --- Configure CORS ---
-// This allows your frontend (running on http://localhost:8080) to make requests to your backend.
+const allowedOrigins = [
+    'http://localhost:3000', // Your local frontend
+    'http://localhost:8080', // Just in case
+    'https://your-netlify-site-name.netlify.app' // <-- PASTE YOUR NETLIFY URL HERE
+];
+
 app.use(cors({
-    origin: 'http://localhost:8080' 
+    origin: allowedOrigins
 }));
 
 // Middleware: Allows the server to parse incoming JSON bodies (Crucial for login/signup data)
