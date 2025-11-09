@@ -3,9 +3,11 @@ import { createContext, useState, useContext, useEffect, ReactNode } from 'react
 import api from '@/lib/api'; // Assuming you created api.ts
 
 // Define the shape of your user object based on your backend
-interface User {
+export interface User {
   id: string;
+  name: string;
   email: string;
+  isAdmin: boolean;
 }
 
 interface AuthContextType {
