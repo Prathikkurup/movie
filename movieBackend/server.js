@@ -16,7 +16,7 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:3000', // Your local frontend
     'http://localhost:8080', // Just in case
-    'https://your-netlify-site-name.netlify.app' // <-- PASTE YOUR NETLIFY URL HERE
+    'https://movieticketbooking-prathik.netlify.app/' // <-- PASTE YOUR NETLIFY URL HERE
 ];
 
 app.use(cors({
